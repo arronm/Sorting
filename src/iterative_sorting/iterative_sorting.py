@@ -35,6 +35,8 @@ def count_sort( arr, maximum=-1 ):
 
     # Find the largest Number
     for index in range(0, len(arr) - 1):
+        if type(arr[index]) is not int:
+            return 'Error, non-integers are not allowed in Count Sort'
         if arr[index] < 0:
             return 'Error, negative numbers not allowed in Count Sort'
         if arr[index] > largest_num:
