@@ -1,25 +1,17 @@
-### Algorithm
-# 1. Start with current index = 0
-
-# 2. For all indices EXCEPT the last index:
-
-#     a. Loop through elements on right-hand-side 
-#     of current index and find the smallest element
-
-#     b. Swap the element at current index with the
-#     smallest element found in above loop
-
-
 # TO-DO: Complete the selection_sort() function below 
 def selection_sort( arr ):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
         smallest_index = cur_index
+        
         # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
+        for j in range (i + 1, len(arr)): # i = 0, j = 1, stop = len(arr)
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
 
         # TO-DO: swap
+        arr[cur_index], arr[smallest_index] = arr[smallest_index], arr[cur_index]
 
     return arr
 
@@ -44,7 +36,3 @@ def bubble_sort( arr ):
 def count_sort( arr, maximum=-1 ):
 
     return arr
-
-# unsorted = [4, 2, 3, 1, 5]
-# sorted = selection_sort(unsorted)
-# print(sorted)
