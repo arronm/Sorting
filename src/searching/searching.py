@@ -38,7 +38,6 @@ def binary_search_recursive(arr, target, idx=0):
   if len(arr) == 1:
     if arr[0] is not target:
       return -1
-    print(f'index: {idx}')
     return idx
   
   mid = len(arr) // 2
@@ -55,7 +54,3 @@ def binary_search_recursive(arr, target, idx=0):
     idx = mid + idx
 
   return binary_search_recursive(next_arr, target, idx)
-
-if __name__ == '__main__':
-  arr1 = [-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9]
-  print(binary_search_recursive(arr1, -9))
