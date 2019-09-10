@@ -1,20 +1,3 @@
-# size_1 = len(test_list1) 
-# size_2 = len(test_list2) 
-  
-# res = [] 
-# i, j = 0, 0
-  
-# while i < size_1 and j < size_2: 
-#     if test_list1[i] < test_list2[j]: 
-#       res.append(test_list1[i]) 
-#       i += 1
-  
-#     else: 
-#       res.append(test_list2[j]) 
-#       j += 1
-  
-# res = res + test_list1[i:] + test_list2[j:] 
-
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge( arrA, arrB ):
     elements = len( arrA ) + len( arrB )
@@ -31,12 +14,10 @@ def merge( arrA, arrB ):
             indexB += 1
         if indexB == len(arrB):
             # Append last element in arrB
-            # merged_arr[i + 1] = **arrA[indexA:]
             merged_arr = [*merged_arr[:i + 1], *arrA[indexA:]]
             break
         elif indexA == len(arrA):
             # Append last element in arrA
-            # merged_arr[i + 1] = **arrB[indexB:]
             merged_arr = [*merged_arr[:i + 1], *arrB[indexB:]]
             break
 
@@ -76,7 +57,3 @@ def merge_sort_in_place(arr, l, r):
 def timsort( arr ):
 
     return arr
-
-if __name__ == '__main__':
-  arr1 = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
-  print(merge_sort(arr1))
