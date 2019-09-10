@@ -25,6 +25,8 @@ class SearchingTests(unittest.TestCase):
         arr1 = [-9, -8, -6, -4, -3, -2, 0, 1, 2, 3, 5, 7, 8, 9]
         arr2 = []
 
+        # updated to match arguments since python doesn't throw extra params
+        # could probably make use of **args in my function..
         self.assertEqual(binary_search_recursive(arr1, -8), 1)
         self.assertEqual(binary_search_recursive(arr1, 0), 6)
         self.assertEqual(binary_search_recursive(arr2, 6), -1)
