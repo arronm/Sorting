@@ -18,25 +18,42 @@ def selection_sort( arr ):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort2( arr ):
     swapped = 1
+    iter = 0
     while swapped > 0:
         swapped = 0
         for index in range(0, len(arr) - 1):
+            iter += 1
             if arr[index] > arr[index + 1]:
                 swapped += 1
                 arr[index], arr[index + 1] = arr[index + 1], arr[index]
+    print(iter)
     return arr
 
-def bubble_sort(arr):
+
+def bubble_sort3(arr):
+    iter = 0
     for i in range(len(arr)):
         # Can assume right side of the array is sorted for every iteration of i
         # no need to check already sorted elements
         for j in range(0, len(arr) - i - 1):
+            iter += 1
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
-
+    print(iter)
     return arr
 
 
+def bubble_sort(arr, idx=1, cur_idx=1, iter=0):
+    if cur_idx >= len(arr):
+        print(iter)
+        return arr
+    if idx == 0 or arr[idx] > arr[idx-1]:
+        return bubble_sort(arr, cur_idx + 1, cur_idx + 1, iter + 1)
+    else:
+        arr[idx], arr[idx - 1] = arr[idx - 1], arr[idx]
+        return bubble_sort(arr, idx - 1, cur_idx, iter + 1)
+    
+    
 
 
 # STRETCH: implement the Count Sort function below
@@ -71,4 +88,5 @@ def count_sort( arr, maximum=-1 ):
 
     return sorted_arr
 
-import random
+if __name__ == "__main__":
+    print(bubble_sort([5,3,2,4,1,7,6,9,8]))
